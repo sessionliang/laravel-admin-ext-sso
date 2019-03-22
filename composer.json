@@ -1,5 +1,5 @@
 {
-    "name": "laravel-admin-ext/sso",
+    "name": "dm-laravel-admin-ext/sso",
     "description": "laravel-admin 单点登录扩展",
     "type": "library",
     "keywords": ["laravel-admin", "extension", "sso"],
