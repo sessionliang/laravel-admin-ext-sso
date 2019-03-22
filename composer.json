@@ -1,9 +1,9 @@
 {
-    "name": "laravel-admin-ext-sso",
+    "name": "laravel_admin_ext_sso",
     "description": "laravel-admin 单点登录扩展",
     "type": "library",
     "keywords": ["laravel-admin", "extension", "sso"],
-    "homepage": "https://github.com/sessionliang/laravel-admin-ext/sso",
+    "homepage": "https://github.com/sessionliang/laravel-admin-ext-sso",
     "license": "MIT",
     "authors": [
         {
