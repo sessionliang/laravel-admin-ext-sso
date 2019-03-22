@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Encore\Admin\Controllers\AuthController;
 use DM\SSO\Models\SsoTicket;
 use Encore\Admin\Facades\Admin;
+use DM\SSO\Models\SsoClient;
 
 class SSOController extends AuthController
 {
@@ -35,11 +36,11 @@ class SSOController extends AuthController
      * @param [type] $app_id
      * @return void
      */
-    public static function redirectTo($app_id){
+    public static function loginTo($app_id){
         $user = Admin::user();
         $sso_client = SsoClient::where(['app_id' => $app_id])->first();
         if(isset($sso_client) && isset($user)){
-            $sso_ticket = SsoTicket::where(['user_id'=>$user->id,'app_id'=>$app_id])->whereTime('expire_at','>',now())->first();
+            $sso_ticket = SsoTicket::where(['user_id'=>$user->id,'app_id'=>config('sso.app_id')])->whereTime('expire_at','>',now())->first();
             if(isset($sso_ticket)){
                 return $sso_client->domain.'/admin/sso/'.$sso_ticket->ticket;
             }

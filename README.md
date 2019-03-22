@@ -2,7 +2,7 @@
 
 ## install
 
-`composer require sessionliang/laravel-admin-ext-sso -vvv`
+`composer require dm-laravel-admin-ext/sso`
 
 ## configure
 
@@ -40,7 +40,7 @@ protected $middlewareGroups = [
 
 ```php
 
-$url = SSOController::redirectTo($app_id);
+$url = SSOController::loginTo($app_id);
 
 ```
 
