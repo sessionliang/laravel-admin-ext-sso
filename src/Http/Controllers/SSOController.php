@@ -14,15 +14,15 @@ class SSOController extends AuthController
     public function sso(Request $request, $ticket)
     {
         try{
-            $sso_ticket = SsoTicket::where(['ticket'=>$ticket])->whereTime('expire_at','>',now())->first();
-            // dump($sso_ticket->user_id);
+            $sso_ticket = SsoTicket::where(['ticket'=>$ticket])
+                ->whereRaw('expire_at > CURRENT_TIMESTAMP')
+                ->first();
             if(isset($sso_ticket)){
                 $user = $this->guard()->loginUsingId($sso_ticket->user_id);
-                // dump($user);
                 return $this->sendLoginResponse($request);
             }
             else{
-                return redirect('auth/login');
+                return redirect('admin/auth/login');
             }
         }
         catch(\Exception $e){
