@@ -1,0 +1,34 @@
+{
+    "name": "laravel-admin-ext/sso",
+    "description": "laravel-admin 单点登录扩展",
+    "type": "library",
+    "keywords": ["laravel-admin", "extension", "sso"],
+    "homepage": "https://github.com/sessionliang/laravel-admin-ext/sso",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sessionliang",
+            "email": "sessionliang@outlook.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "encore/laravel-admin": "~1.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DM\\SSO\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DM\\SSO\\SSOServiceProvider"
+            ]
+
+        }
+    }
+}
