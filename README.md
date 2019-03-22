@@ -1,4 +1,4 @@
-# laravel-admin-ext\sso
+# laravel-admin-ext-sso
 
 ## install
 
